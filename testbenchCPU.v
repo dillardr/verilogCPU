@@ -1,40 +1,40 @@
 
 
-module adder_tb();
+// fpga4student.com: FPGA projects, Verilog projects, VHDL projects
+// Verilog project: Verilog code for ALU
+// by FPGA4STUDENT
+ //`timescale 1ns / 1ps  
 
-//Toggle clock
-reg clk;
-initial begin
-	clk = 0;
-	forever #80 clk = ~clk;
-end
+module tb_alu;
+//Inputs
+ reg[7:0] A,B;
+ reg[3:0] ALU_Sel;
 
-
-reg sclrn;
-initial begin
-	sclrn = 0;
-	#350 sclrn = 1;
-end 
-
-reg[7:0] a, b;
-wire[15:0] dout;
-
-reg[7:0] temp_a, temp_b;
-initial begin
-	temp_a = 2;
-	temp_b = 2;
-end
-
-initial begin 
-	temp_a = #100 8'd4;
-	a = #200 temp_a;
-end
-
-initial begin
-	temp_b <= #100 8'd4;
-	b <= #200 temp_b;
-end
-
-adder DUT (.ina(a), .inb(b), .clk(clk),.sclrn(sclrn), .out(dout));
-
+//Outputs
+ wire[7:0] ALU_Out;
+ wire CarryOut;
+ // Verilog code for ALU
+ integer i;
+ alu test_unit(
+            A,B,  // ALU 8-bit Inputs                 
+            ALU_Sel,// ALU Selection
+            ALU_Out, // ALU 8-bit Output
+            CarryOut // Carry Out Flag
+     );
+    initial begin
+    // hold reset state for 100 ns.
+    A = 8'h0A;
+    B = 4'h02;
+    ALU_Sel = 4'h0;
+      
+	for (i=0;i<=15;i=i+1)
+    	begin
+       		ALU_Sel = ALU_Sel + 8'h01;
+       		#10;
+      	end
+      
+    A = 8'hF6;
+    B = 8'h0A;
+      
+    end
 endmodule
