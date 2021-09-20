@@ -32,5 +32,4 @@ module alu(
             default: ALU_Result = A + B ; 
         endcase
     end
-
 endmodule 

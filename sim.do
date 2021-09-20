@@ -1,5 +1,5 @@
 vlib work
-vlog CPU.v testbenchCPU.v
+vlog alu.v testbenchCPU.v
 vsim work.tb_alu
 add wave A 
 add wave B 
