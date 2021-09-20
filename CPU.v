@@ -13,6 +13,8 @@ module alu(
     assign CarryOut = tmp[8];
     always @*
     begin
+
+        
         case(ALU_Sel)
             4'b0000: ALU_Result = A + B;
             4'b0001: ALU_Result = A - B;
