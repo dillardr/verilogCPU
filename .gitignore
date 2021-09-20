@@ -3,4 +3,6 @@ work
 wlf*
 *.wlf
 test
+*.bak
+*.orig
 
