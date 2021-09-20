@@ -6,5 +6,5 @@ add wave B
 add wave ALU_Sel
 add wave ALU_Out
 add wave CarryOut 
-
 run 1000
+
