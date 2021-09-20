@@ -1,0 +1,22 @@
+
+16 bit instruction
+
+
+4 bit opcodes
+0000    Load Word
+0001    Store Word
+0010    Add                     rA, rB
+0011    Subtract                rA, rB
+0100    Invert                  rA 
+0101    LSL                     rA
+0110    LSR                     rA
+0111    Bitwise AND             rA 
+1000    Bitwise OR              rA 
+1001    Set on less than        rA, rB
+1010    Hamming Distance
+1011    Branch on Equal 
+1100    Branch on Not Equal 
+1101    Jump
+
+32 gpregisters so 5 bit register addressing
+
