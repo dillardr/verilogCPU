@@ -1,9 +1,10 @@
 vlib work
 vlog CPU.v testbenchCPU.v
-vsim work.adder_tb
-add wave a
-add wave b
-add wave dout
-add wave clk
-add wave sclrn
+vsim work.tb_alu
+add wave A 
+add wave B 
+add wave ALU_Sel
+add wave ALU_Out
+add wave CarryOut 
+
 run 1000
