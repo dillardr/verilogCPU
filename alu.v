@@ -1,16 +1,16 @@
 
 module alu(
-        input [7:0] A, B,
+        input [`col-1:0] A, B,
         input [3:0] ALU_Sel,
-        output [7:0] ALU_Out,
+        output [`col-1:0] ALU_Out,
         output CarryOut
     );
 
-    reg [7:0] ALU_Result;
-    wire [8:0] tmp;
+    reg [`col-1:0] ALU_Result;
+    wire [`col:0] tmp;
     assign ALU_Out = ALU_Result;
     assign tmp = {1'b0,A} + {1'b0,B};
-    assign CarryOut = tmp[8];
+    assign CarryOut = tmp[`col];
     always @*
     begin
         case(ALU_Sel)
@@ -32,5 +32,4 @@ module alu(
             default: ALU_Result = A + B ; 
         endcase
     end
-
 endmodule 
