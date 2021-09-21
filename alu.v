@@ -1,3 +1,4 @@
+`include "parameter.v"
 
 module alu(
         input [`col-1:0] A, B,

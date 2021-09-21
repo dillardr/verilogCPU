@@ -3,7 +3,7 @@
 // fpga4student.com: FPGA projects, Verilog projects, VHDL projects
 // Verilog project: Verilog code for ALU
 // by FPGA4STUDENT
- `timescale 1ns / 1ps  
+//`timescale 1ns / 1ps  
 
 module tb_alu;
 //Inputs
