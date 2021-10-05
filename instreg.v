@@ -10,9 +10,9 @@ module instreg(
     always @(posedge clk or posedge reset)
         begin
             if (reset)
-                inst_out  <= 0;
+                inst_out = 0;
             else
-                inst_out <= inst_in;
+                inst_out = inst_in;
         end
 
 
