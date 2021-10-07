@@ -11,14 +11,14 @@
 module gpreg(
     input[4:0] rA, rB,
     input[7:0] data_in,
-    input clk, reset, we
+    input clk, reset, we,
     output reg [7:0] outA, outB
-)
+);
 
 reg [7:0] regfile[0:31];
 integer i;
 
-always @(posedge clk || posedge reset)
+always @(posedge clk or posedge reset)
     begin
         if(reset == 1)
             begin
@@ -27,18 +27,18 @@ always @(posedge clk || posedge reset)
                         regfile[i] = 8'b0;
                     end    
                 outA = 8'bx;
-                outb = 8'bx;
+                outB = 8'bx;
             end
         else if(reset == 0)
             begin
                 if(we == 1)
                     begin
-                        regFil [rA] = data_in;
+                        regfile [rA] = data_in;
                     end
                 else if(we == 0)
                     begin
-                        outA = regFile[rA];
-                        outB = regFile[rB];
+                        outA = regfile[rA];
+                        outB = regfile[rB];
                     end
                 else;
             end
